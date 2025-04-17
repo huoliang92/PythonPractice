@@ -2,8 +2,8 @@
 with open("learning_python.txt") as file_object:
     content = file_object.read()
     print(content.rstrip())
-    print(file_object.tell()) ##指出当前文件指针的位置
-    file_object.seek(0.0)
+    print(file_object.tell()) ##指出当前文件指针的位置，由于read()操作，已经到了文件文段
+    file_object.seek(0.0)  ## 回到文件开走
     print(file_object.tell())
     for line in file_object:
         print(line.rstrip())
@@ -23,7 +23,7 @@ for eachLine in list:
 with open("learning_python.txt") as file_object:
     content = file_object.readlines()
 for singleLine in content:
-    a = singleLine.replace("Python", "C++")
+    a = singleLine.replace("Python", "C++")  ##把 pyhton 换成C++
     print(singleLine.rstrip())
     print(a.rstrip())
 
@@ -62,14 +62,12 @@ while continueFg:
 
 #10-6-7
 
-
 def quit_check(word):
     if word == "q":
         print("溜了溜了")
         return False
     else:
         return True
-
 
 while True:
     try:
